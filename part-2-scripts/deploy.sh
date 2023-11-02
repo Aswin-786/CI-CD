@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ensure the correct Node.js environment
-export PATH=$PATH:/home/ubuntu/.nvm/versions/node/vXX.X.X/bin # Update the Node.js path accordingly
+export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v20.5.0/bin # Update the Node.js path accordingly
 
 # Change to the project directory
 cd /home/ubuntu/CI-CD # Update the directory path according to your project
