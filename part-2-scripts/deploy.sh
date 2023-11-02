@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Set the correct Node.js environment path
-export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v20.5.0/bin # Update the Node.js path accordingly
-
 # Change to the project directory
 cd /home/ubuntu/CI-CD # Update the directory path according to your project
 ls
@@ -15,11 +12,21 @@ ls
 cd server
 ls
 
-# Ensure the correct PM2 path (if different from Node.js)
-/home/ubuntu/.nvm/versions/node/v20.5.0/bin/npm i -g pm2
+# Use 'which' command to get the path of node and npm
+NODE_PATH=$(which node)
+NPM_PATH=$(which npm)
+
+# Check if Node.js and npm are available
+if [ -z "$NODE_PATH" ] || [ -z "$NPM_PATH" ]; then
+    echo "Node.js or npm not found. Please ensure they are installed or adjust the paths."
+    exit 1
+fi
+
+# Install PM2 if not already available
+$NPM_PATH i -g pm2
 
 # Terminate any existing running processes managed by PM2
-/home/ubuntu/.nvm/versions/node/v20.5.0/bin/pm2 kill
+$(which pm2) kill
 
 # Start the Node.js application using PM2
-/home/ubuntu/.nvm/versions/node/v20.5.0/bin/pm2 start index.js
+$(which pm2) start index.js
