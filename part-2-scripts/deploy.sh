@@ -11,7 +11,7 @@ git pull origin main
 
 # Change to the server directory
 cd server
-
+npm i -g pm2
 # Terminate any existing running processes managed by PM2
 pm2 kill
 
