@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/me', (req, res) => {
-  res.json({ message: '.......you are going to win.....' })
+  res.json({ message: 'ok' })
 })
 
 app.listen(4000, () => console.log(`Example app listening on port 4000`))
