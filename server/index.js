@@ -4,7 +4,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.json({ message: 'eyyyy' })
+  res.json({ message: '1' })
 })
 
 app.listen(4000, () => console.log(`Example app listening on port 4000`))
