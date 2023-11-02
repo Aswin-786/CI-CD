@@ -1,9 +1,19 @@
 #!/bin/bash
-export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v20.5.0/bin
 
-cd CI-CD
- git pull origin main
- cd server
- node index.js
- #pm2 kill
- #pm2 start index.js
+# Ensure the correct Node.js environment
+export PATH=$PATH:/home/ubuntu/.nvm/versions/node/vXX.X.X/bin # Update the Node.js path accordingly
+
+# Change to the project directory
+cd /home/ubuntu/CI-CD # Update the directory path according to your project
+
+# Fetch the latest changes from the main branch of the Git repository
+git pull origin main
+
+# Change to the server directory
+cd server
+
+# Terminate any existing running processes managed by PM2
+pm2 kill
+
+# Start the Node.js application using PM2
+pm2 start index.js
