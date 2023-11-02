@@ -9,6 +9,7 @@ cd CI-CD
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
  nvm install node
  npm i
+ npm i -g pm2
  cd server
  pm2 kill
  pm2 start index.js
