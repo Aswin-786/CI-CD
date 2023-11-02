@@ -10,6 +10,5 @@ cd CI-CD
  nvm install node
  npm i
  cd server
- node index.js
- #pm2 kill
- #pm2 start index.js
+ pm2 kill
+ pm2 start index.js
