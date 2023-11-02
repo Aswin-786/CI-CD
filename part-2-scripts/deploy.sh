@@ -11,5 +11,6 @@ cd CI-CD
  npm i
  npm i -g pm2
  cd server
+ git pull origin main
  pm2 kill
  pm2 start index.js
