@@ -4,7 +4,7 @@ const app = express()
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.json({ message: 'my ci cd is working' })
+  res.json({ message: 'my ci cd is working..' })
 })
 
 app.get('/me', (req, res) => {
